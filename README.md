@@ -9,6 +9,10 @@ Release 1:
 Dashboard with multiple bathrooms
 If someone has been in there for more than 2 minutes create a status of yellow or 'danger'
 for a minute after departure.
+Add ability to 'reserve' a bathroom, if the door does not close within 1 minute of reservation
+then it will be set back to open unless taken by someone else
+Add bathroom status lights, in case someone reserves it and another person doesn't have a chance
+to check online interface.
 
 Release 2:
 ???? Mobile app????
