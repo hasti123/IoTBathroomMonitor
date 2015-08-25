@@ -17,3 +17,5 @@ to check online interface.
 Release 2:
 ???? Mobile app????
 ???? Notify when something needs to be cleaned????
+Eventually want UserIds, BuildingId, and generic Door for eventual home automation
+maybe include time spent in rooms?
