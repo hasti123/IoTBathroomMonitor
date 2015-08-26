@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+    <span id="uptime">Hello</span><br>
+    <span id="tstamp"></span>
+
+    <br><br>
+    <button onclick="start()">Connect</button>
+
+    <script type="text/javascript">
+    function start() {
+        document.getElementById("uptime").innerHTML = "Waiting for data...";
+        var deviceID = "430036001547343339383037";
+        var accessToken = "ec4e29afa16b2728b2b61a23ffb18b81aa66aa34";
+        var eventSource = new EventSource("https://api.spark.io/v1/devices/" + deviceID + "/events/?access_token=" + accessToken);
+
+        eventSource.addEventListener("lightStatus", function(e) {
+          var parsedData = JSON.parse(e.data);
+            document.getElementById("uptime").innerHTML = parsedData.data
+          },false);
+
+    }
+    </script>
+</body>
+</html>
