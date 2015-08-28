@@ -4,6 +4,15 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');                     // mongoose for mongodb
+var morgan = require('morgan');                         // log requests to the console (express4)
+var methodOverride = require('method-override');
+ 
+ // Mongo DB setup
+var MongoClient = require('mongodb').MongoClient;
+var assert = require('assert');
+var ObjectId = require('mongodb').ObjectID;
+var url = 'mongodb://localhost:27017/test';
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -13,6 +22,9 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+
+// Mongoose configuration
+//mongoose.connect('mongodb://node:nodeuser@mongo.onmodulus.net:27017/uwO3mypu'); 
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -60,5 +72,12 @@ app.use(function(err, req, res, next) {
 if (app.get('env') === 'development') {
   app.locals.pretty = true;
 }
+
+var url = 'mongodb://localhost:27017/test';
+MongoClient.connect(url, function(err, db) {
+  assert.equal(null, err);
+  console.log("Connected correctly to server.");
+  db.close();
+});
 
 module.exports = app;
