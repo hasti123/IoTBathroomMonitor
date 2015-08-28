@@ -12,8 +12,6 @@ function SetInitialStatus() {
 }
 
 function start() {
-		$("#uptime").text("Waiting for data...");
-		
 		var deviceID = "430036001547343339383037";
 		var accessToken = "ec4e29afa16b2728b2b61a23ffb18b81aa66aa34";
 		
@@ -21,19 +19,22 @@ function start() {
 		var eventSource = new EventSource("https://api.spark.io/v1/devices/" + deviceID + "/events/?access_token=" + accessToken);
 		eventSource.addEventListener("lightStatus", function(e) {
 			var parsedData = JSON.parse(e.data);
-				$("#uptime").text(parsedData.data);
-				//document.getElementById("uptime").innerHTML = parsedData.data
 				if(parsedData.data == "lightOn"){
-					$("#IndicatorBulb").attr("src", "/images/BulbOn.png");
 					$("#IndicatorLight").attr("src", "/images/LightsOn.png");
+					$("#IndicatorText").text("ON");
+					$("#IndicatorText").attr('style', 'color: green');
 				} else {
-					$("#IndicatorBulb").attr("src", "/images/BulbOff.png");
 					$("#IndicatorLight").attr("src", "/images/LightsOff.png");
+					$("#IndicatorText").text("OFF");
+					$("#IndicatorText").attr('style', 'color: red');
 				}
 			}, false);
 			
-			// Calls function forcing Photon to publish
-			SetInitialStatus();
+		// Looping function call forcing Photon to publish until we have a status
+		//do {
+			SetInitialStatus();	
+		//} while ($("#IndicatorText").text() != "ON" && $("#IndicatorText").text() != "OFF");
+		
 			
 }
 

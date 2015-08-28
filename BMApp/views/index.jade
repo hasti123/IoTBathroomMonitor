@@ -4,13 +4,11 @@ block HomeHeadContent
   script(type='text/javascript', src='/javascripts/home.js')
 
 block content
-  h1= title
-  p Welcome all to #{title}
+  p#greeting Welcome to the Light Switch Site!
   br
-  p#uptime Hello
+  p#uptime
   br
-  span#tstamp
+  img#IndicatorLight(src="/images/loading_spinner.gif")
   br
-  img#IndicatorLight(src="/images/LightsOff.png")
-  img#IndicatorBulb(src="/images/BulbOff.png")
-  //button(onclick='start()') Connect
+  p#IndicatorText
+  
