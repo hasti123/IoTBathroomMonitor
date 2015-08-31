@@ -15,7 +15,24 @@ Add bathroom status lights, in case someone reserves it and another person doesn
 to check online interface.
 
 Release 2:
-???? Mobile app????
-???? Notify when something needs to be cleaned????
+???? Mobile app ????
+???? Notify when something needs to be cleaned ????
 Eventually want UserIds, BuildingId, and generic Door for eventual home automation
 maybe include time spent in rooms?
+
+===================================================================================================
+
+SETTING UP THE APP FOR THE FIRST TIME
+1. Install Node.js
+	a. After you install Node.js, check the version you have installed
+	b. This can be done by typing the following command in your Command Prompt: "node -v"
+		- This should be v0.12.0 or greater
+2. After pulling down the code cd into the directory <src code home>/BMApp/
+3. Once in this directory, install the node-modules needed for this app
+	a. This can be done by typing the following command in your Command Prompt: "npm install"
+4. Set the default application to be debugged to 'BMApp'
+	a. This can be done by typing the following command in your Command Prompt: "set DEBUG=BMApp"
+5. Run the applicaiton
+	a. This can be done by typing the following command in your Command Prompt: "npm start"
+6. Go to http://localhost:3000/ to view the app running
+	a You should not see the loading gif change unless the Photon is plugged in and running
