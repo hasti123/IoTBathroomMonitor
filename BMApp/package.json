@@ -16,7 +16,7 @@
     "mongoose"   : "~3.6.2",
     "method-override": "~2.1.2",
     "mongodb"   : "*.*.*",
-    "assert"    : "1.3.0"
+    "assert"    : "*.*.*"
   }
 }
     
