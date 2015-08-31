@@ -30,6 +30,23 @@
         66%   {fill: orange;}
         100%  {fill: red;}
       }
+      .destroyed {
+          background-color: rgba(135, 104, 0, 0.9);
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          height: 460px;
+          color: #FFF;
+          font-size: 50px;
+          font-family: sans-serif;
+          font-weight: bold;
+          padding: 20px;
+          display: none;
+          background-image: url('destroyed.png');
+          background-size: cover;
+          background-position: right top;
+      }
     </style>
   </head>
   <body>
@@ -45,6 +62,10 @@
       </svg>
     </div>
 
+    <div class="destroyed">
+      bathroom DESTROYED.
+    </div>
+
     <br>
     <input type="submit" value="Make Bathroom 1 Taken" class="button bath1Taken">
     <input type="submit" value="Make Bathroom 1 Available" class="button bath1Available">
@@ -53,15 +74,24 @@
     <input type="submit" value="Make Bathroom 2 Available" class="button bath2Available">
 
     <script>
+
+    var destroyed = function(){
+      $(".destroyed").slideDown(1000, function(){
+        $(".destroyed").slideUp(2000);
+      });
+    };
+
     $('.button').click(function(){
       if ($(this).hasClass('bath1Taken')) {
         $('#bathOne').attr('class', "space active");
       } else if ($(this).hasClass('bath1Available')) {
         $('#bathOne').attr('class', "space");
+        destroyed();
       } else if ($(this).hasClass('bath2Taken')) {
         $('#bathTwo').attr('class', "space active");
       } else if ($(this).hasClass('bath2Available')) {
         $('#bathTwo').attr('class', "space");
+        destroyed();
       }
     })
     $(window).load(function(){
