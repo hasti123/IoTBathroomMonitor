@@ -17,8 +17,8 @@ function ajaxRequest(){
 }
 
 function start() {
-    var deviceID = "430036001547343339383037";
-    var accessToken = "ec4e29afa16b2728b2b61a23ffb18b81aa66aa34";
+    var deviceID = "";
+    var accessToken = "";
     var eventSource = new EventSource("https://api.spark.io/v1/devices/" + deviceID + "/events/?access_token=" + accessToken);
 
     document.getElementById("startButton").innerHTML = "Connected"
