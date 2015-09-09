@@ -13,9 +13,9 @@
         z-index: 999;
       }
       svg {
-        background-image: url('floorplan.jpg');
-        height: 493px;
-        width: 600px;
+        background-image: url('floorplan.png');
+        height: 896px;
+        width: 1128px;
       }
       .space {
         fill: green;
@@ -57,41 +57,32 @@
 
     <div class="layout">
       <svg>
-        <path id="bathOne" class="space" d="M232,119 349,119 349,190 310,190 310,212 232,212" />
-        <path id="bathTwo" class="space" d="M285,410 342,410 342,355 385,355 385,480 285,480" />
+        <path id="bathOne" class="space" d="M245,192 278,192 278,227 245,227" />
+        <path id="bathTwo" class="space" d="M279,192 311,192 311,227 279,227" />
+        <path id="bathThree" class="space" d="M511,245 544,245 544,280 511,280" />
+        <path id="bathFour" class="space" d="M545,245 578,245 578,280 545,280" />
+        <path id="bathFive" class="space" d="M382,489 416,489 416,525 382,525" />
+        <path id="bathSix" class="space" d="M417,489 449,489 449,525 417,525" />
+        <path id="bathSeven" class="space" d="M718,502 754,502 754,535 718,535" />
+        <path id="bathEight" class="space" d="M718,536 754,536 754,569 718,569" />
+        <path id="bathNine" class="space" d="M397,657 429,657 429,689 397,689" />
+        <path id="bathTen" class="space" d="M430,657 462,657 462,689 430,689" />
+        <path id="bathEleven" class="space" d="M522,685 559,685 559,740 522,740" />
+        <path id="bathTwelve" class="space" d="M560,685 596,685 596,740 560,740" />
       </svg>
     </div>
 
-    <div class="destroyed">
-      bathroom DESTROYED.
-    </div>
-
     <br>
-    <input type="submit" value="Make Bathroom 1 Taken" class="button bath1Taken">
-    <input type="submit" value="Make Bathroom 1 Available" class="button bath1Available">
-    <br><br><br>
-    <input type="submit" value="Make Bathroom 2 Taken" class="button bath2Taken">
-    <input type="submit" value="Make Bathroom 2 Available" class="button bath2Available">
+    <input type="submit" value="Make Bathroom Taken" class="button bathTaken">
+    <input type="submit" value="Make Bathroom Available" class="button makeAvailable">
 
     <script>
 
-    var destroyed = function(){
-      $(".destroyed").slideDown(1000, function(){
-        $(".destroyed").slideUp(2000);
-      });
-    };
-
     $('.button').click(function(){
-      if ($(this).hasClass('bath1Taken')) {
-        $('#bathOne').attr('class', "space active");
-      } else if ($(this).hasClass('bath1Available')) {
-        $('#bathOne').attr('class', "space");
-        destroyed();
-      } else if ($(this).hasClass('bath2Taken')) {
-        $('#bathTwo').attr('class', "space active");
-      } else if ($(this).hasClass('bath2Available')) {
-        $('#bathTwo').attr('class', "space");
-        destroyed();
+      if ($(this).hasClass('bathTaken')) {
+        $('.space').attr('class', "space active");
+      } else if ($(this).hasClass('makeAvailable')) {
+        $('.space').attr('class', "space");
       }
     })
     $(window).load(function(){
