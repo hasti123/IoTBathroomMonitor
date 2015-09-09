@@ -16,6 +16,8 @@
         background-image: url('floorplan.png');
         height: 896px;
         width: 1128px;
+        background-size: 100%;
+        background-repeat: no-repeat;
       }
       .space {
         fill: green;
@@ -47,6 +49,9 @@
           background-size: cover;
           background-position: right top;
       }
+      .scaler {
+        margin: 10px;
+      }
     </style>
   </head>
   <body>
@@ -55,20 +60,25 @@
       Loading the assets....
     </div>
 
+    <input class="scaler" placeholder="Scale Percentage">
+    <input type="submit" value="Scale It" class="scalerButton">
+
     <div class="layout">
-      <svg>
-        <path id="bathOne" class="space" d="M245,192 278,192 278,227 245,227" />
-        <path id="bathTwo" class="space" d="M279,192 311,192 311,227 279,227" />
-        <path id="bathThree" class="space" d="M511,245 544,245 544,280 511,280" />
-        <path id="bathFour" class="space" d="M545,245 578,245 578,280 545,280" />
-        <path id="bathFive" class="space" d="M382,489 416,489 416,525 382,525" />
-        <path id="bathSix" class="space" d="M417,489 449,489 449,525 417,525" />
-        <path id="bathSeven" class="space" d="M718,502 754,502 754,535 718,535" />
-        <path id="bathEight" class="space" d="M718,536 754,536 754,569 718,569" />
-        <path id="bathNine" class="space" d="M397,657 429,657 429,689 397,689" />
-        <path id="bathTen" class="space" d="M430,657 462,657 462,689 430,689" />
-        <path id="bathEleven" class="space" d="M522,685 559,685 559,740 522,740" />
-        <path id="bathTwelve" class="space" d="M560,685 596,685 596,740 560,740" />
+      <svg class="buildingMap">
+        <g class="buildingMapGraphic">
+          <path id="bathOne" class="space" d="M245,192 278,192 278,227 245,227" />
+          <path id="bathTwo" class="space" d="M279,192 311,192 311,227 279,227" />
+          <path id="bathThree" class="space" d="M511,245 544,245 544,280 511,280" />
+          <path id="bathFour" class="space" d="M545,245 578,245 578,280 545,280" />
+          <path id="bathFive" class="space" d="M382,489 416,489 416,525 382,525" />
+          <path id="bathSix" class="space" d="M417,489 449,489 449,525 417,525" />
+          <path id="bathSeven" class="space" d="M718,502 754,502 754,535 718,535" />
+          <path id="bathEight" class="space" d="M718,536 754,536 754,569 718,569" />
+          <path id="bathNine" class="space" d="M397,657 429,657 429,689 397,689" />
+          <path id="bathTen" class="space" d="M430,657 462,657 462,689 430,689" />
+          <path id="bathEleven" class="space" d="M522,685 559,685 559,740 522,740" />
+          <path id="bathTwelve" class="space" d="M560,685 596,685 596,740 560,740" />
+        </g>
       </svg>
     </div>
 
@@ -187,6 +197,31 @@
 
     $(window).load(function(){
       $('.loading').slideUp();
+    });
+
+    </script>
+
+    <script>
+
+    var scaleIt = function(percentage) {
+
+      var percentage = percentage;
+      var decimal = percentage / 100;
+      var newAttr = "scale(" + decimal + ")";
+      var newWidth = (decimal * 1128);
+      var newHeight = (decimal * 896);
+
+      $(".buildingMapGraphic").attr({transform: newAttr});
+      $(".buildingMap").animate({"height": newHeight});
+      $(".buildingMap").animate({"width": newWidth});
+
+    }
+
+
+
+    $('.scalerButton').click(function(){
+      var scaleVal = parseInt($('.scaler').val());
+      scaleIt(scaleVal);
     });
 
     </script>
