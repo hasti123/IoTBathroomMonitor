@@ -73,24 +73,123 @@
     </div>
 
     <br>
-    <input type="submit" value="Make Bathroom Taken" class="button bathTaken">
-    <input type="submit" value="Make Bathroom Available" class="button makeAvailable">
+    <input type="submit" value="Make Bathroom 1 Taken" class="button bath1Taken">
+    <input type="submit" value="Make Bathroom 1 Available" class="button bath1Available">
+    <br><br><br>
+    <input type="submit" value="Make Bathroom 2 Taken" class="button bath2Taken">
+    <input type="submit" value="Make Bathroom 2 Available" class="button bath2Available">
+    <br><br><br>
+    <input type="submit" value="Make Bathroom 3 Taken" class="button bath3Taken">
+    <input type="submit" value="Make Bathroom 3 Available" class="button bath3Available">
+    <br><br><br>
+    <input type="submit" value="Make Bathroom 4 Taken" class="button bath4Taken">
+    <input type="submit" value="Make Bathroom 4 Available" class="button bath4Available">
+    <br><br><br>
+    <input type="submit" value="Make Bathroom 5 Taken" class="button bath5Taken">
+    <input type="submit" value="Make Bathroom 5 Available" class="button bath5Available">
+    <br><br><br>
+    <input type="submit" value="Make Bathroom 6 Taken" class="button bath6Taken">
+    <input type="submit" value="Make Bathroom 6 Available" class="button bath6Available">
+    <br><br><br>
+    <input type="submit" value="Make Bathroom 7 Taken" class="button bath7Taken">
+    <input type="submit" value="Make Bathroom 7 Available" class="button bath7Available">
+    <br><br><br>
+    <input type="submit" value="Make Bathroom 8 Taken" class="button bath8Taken">
+    <input type="submit" value="Make Bathroom 8 Available" class="button bath8Available">
+    <br><br><br>
+    <input type="submit" value="Make Bathroom 9 Taken" class="button bath9Taken">
+    <input type="submit" value="Make Bathroom 9 Available" class="button bath9Available">
+    <br><br><br>
+    <input type="submit" value="Make Bathroom 10 Taken" class="button bath10Taken">
+    <input type="submit" value="Make Bathroom 10 Available" class="button bath10Available">
+    <br><br><br>
+    <input type="submit" value="Make Bathroom 11 Taken" class="button bath11Taken">
+    <input type="submit" value="Make Bathroom 11 Available" class="button bath11Available">
+    <br><br><br>
+    <input type="submit" value="Make Bathroom 12 Taken" class="button bath12Taken">
+    <input type="submit" value="Make Bathroom 12 Available" class="button bath12Available">
 
     <script>
 
     $('.button').click(function(){
-      if ($(this).hasClass('bathTaken')) {
-        $('.space').attr('class', "space active");
-      } else if ($(this).hasClass('makeAvailable')) {
-        $('.space').attr('class', "space");
+
+      if ($(this).hasClass('bath1Taken')) {
+        $('#bathOne').attr('class', "space active");
+      } else if ($(this).hasClass('bath1Available')) {
+        $('#bathOne').attr('class', "space");
+      }
+
+      else if ($(this).hasClass('bath2Taken')) {
+        $('#bathTwo').attr('class', "space active");
+      } else if ($(this).hasClass('bath2Available')) {
+        $('#bathTwo').attr('class', "space");
+      }
+      else if ($(this).hasClass('bath3Taken')) {
+        $('#bathThree').attr('class', "space active");
+      } else if ($(this).hasClass('bath3Available')) {
+        $('#bathThree').attr('class', "space");
+      }
+
+      else if ($(this).hasClass('bath4Taken')) {
+        $('#bathFour').attr('class', "space active");
+      } else if ($(this).hasClass('bath4Available')) {
+        $('#bathFour').attr('class', "space");
+      }
+
+      else if ($(this).hasClass('bath5Taken')) {
+        $('#bathFive').attr('class', "space active");
+      } else if ($(this).hasClass('bath5Available')) {
+        $('#bathFive').attr('class', "space");
+      }
+
+      else if ($(this).hasClass('bath6Taken')) {
+        $('#bathSix').attr('class', "space active");
+      } else if ($(this).hasClass('bath6Available')) {
+        $('#bathSix').attr('class', "space");
+      }
+
+      else if ($(this).hasClass('bath7Taken')) {
+        $('#bathSeven').attr('class', "space active");
+      } else if ($(this).hasClass('bath7Available')) {
+        $('#bathSeven').attr('class', "space");
+      }
+
+      else if ($(this).hasClass('bath8Taken')) {
+        $('#bathEight').attr('class', "space active");
+      } else if ($(this).hasClass('bath8Available')) {
+        $('#bathEight').attr('class', "space");
+      }
+
+      else if ($(this).hasClass('bath9Taken')) {
+        $('#bathNine').attr('class', "space active");
+      } else if ($(this).hasClass('bath9Available')) {
+        $('#bathNine').attr('class', "space");
+      }
+
+      else if ($(this).hasClass('bath10Taken')) {
+        $('#bathTen').attr('class', "space active");
+      } else if ($(this).hasClass('bath10Available')) {
+        $('#bathTen').attr('class', "space");
+      }
+
+      else if ($(this).hasClass('bath11Taken')) {
+        $('#bathEleven').attr('class', "space active");
+      } else if ($(this).hasClass('bath11Available')) {
+        $('#bathEleven').attr('class', "space");
+      }
+
+      else if ($(this).hasClass('bath12Taken')) {
+        $('#bathTwelve').attr('class', "space active");
+      } else if ($(this).hasClass('bath12Available')) {
+        $('#bathTwelve').attr('class', "space");
       }
     })
+
     $(window).load(function(){
       $('.loading').slideUp();
     });
+
     </script>
-
-
 
   </body>
 </html>
