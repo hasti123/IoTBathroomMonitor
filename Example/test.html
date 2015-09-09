@@ -211,10 +211,13 @@
       var newWidth = (decimal * 1128);
       var newHeight = (decimal * 896);
 
-      $(".buildingMapGraphic").attr({transform: newAttr});
-      $(".buildingMap").animate({"height": newHeight});
-      $(".buildingMap").animate({"width": newWidth});
-
+      $(".buildingMapGraphic").fadeOut(function(){
+        $(".buildingMapGraphic").attr({transform: newAttr});
+        $(".buildingMap").animate({"height": newHeight});
+        $(".buildingMap").animate({"width": newWidth}, function(){
+            $(".buildingMapGraphic").fadeIn();
+        });
+      });
     }
 
 
