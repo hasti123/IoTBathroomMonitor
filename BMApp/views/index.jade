@@ -2,13 +2,37 @@ extends layout
 
 block HomeHeadContent
   script(type='text/javascript', src='/javascripts/home.js')
+  script(type='text/javascript', src='/javascripts/map.js')
+  link(rel='stylesheet', href='/stylesheets/map.css')
+  meta(name='viewport', content='width=device-width, initial-scale=1')
 
 block content
-  p#greeting Welcome to the Light Switch Site!
+  p#greeting Welcome to the BM App!
   br
-  p#uptime
-  br
-  img#IndicatorLight(src="/images/loading_spinner.gif")
-  br
-  p#IndicatorText
+  //p#uptime
+  //br
+  //img#IndicatorLight(src="/images/loading_spinner.gif")
+  //br
+  //p#IndicatorText
   
+  .loading
+    | Loading the assets....
+  input.scaler(placeholder='Scale Percentage')
+  input.scalerButton(type='submit', value='Scale It')
+  .layout
+    svg.buildingMap
+      g.buildingMapGraphic
+        path#bathOne.space(d='M245,192 278,192 278,227 245,227')
+        path#bathTwo.space(d='M279,192 311,192 311,227 279,227')
+        path#bathThree.space(d='M511,245 544,245 544,280 511,280')
+        path#bathFour.space(d='M545,245 578,245 578,280 545,280')
+        path#bathFive.space(d='M382,489 416,489 416,525 382,525')
+        path#bathSix.space(d='M417,489 449,489 449,525 417,525')
+        path#bathSeven.space(d='M718,502 754,502 754,535 718,535')
+        path#bathEight.space(d='M718,536 754,536 754,569 718,569')
+        path#bathNine.space(d='M397,657 429,657 429,689 397,689')
+        path#bathTen.space(d='M430,657 462,657 462,689 430,689')
+        path#bathEleven.space(d='M522,685 559,685 559,740 522,740')
+        path#bathTwelve.space(d='M560,685 596,685 596,740 560,740')
+
+
