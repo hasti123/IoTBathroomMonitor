@@ -11,8 +11,6 @@ function SetBathroomStatus(status) {
 	} else if (status == "doorClosed") {					
 		$('#bathEleven').attr('class', "space active");
 	}
-	
-	
 }
 		
 // Set initial status
