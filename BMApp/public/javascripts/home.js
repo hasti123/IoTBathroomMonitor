@@ -1,19 +1,24 @@
 /// </// <reference path="/javascripts/jquery.min.js" />
-		
-		
+
+var counter = 0;
+
 // Set Bathroom Status function
 function SetBathroomStatus(status) {
 	if(status == "doorOpen"){					
 		$('#bathEleven').attr('class', "space");
+		if (counter > 0) { destroyed(); }
+		counter++;
 	} else if (status == "doorClosed") {					
 		$('#bathEleven').attr('class', "space active");
 	}
+	
+	
 }
 		
 // Set initial status
 function SetInitialStatus() {
-	var deviceID = "430036001547343339383037";
-	var accessToken = "ec4e29afa16b2728b2b61a23ffb18b81aa66aa34";
+	var deviceID = "";
+	var accessToken = "";
 	
 	$.ajax({
 			type: "POST",
@@ -21,9 +26,9 @@ function SetInitialStatus() {
 	});
 }
 
-function start() {
-		var deviceID = "430036001547343339383037";
-		var accessToken = "ec4e29afa16b2728b2b61a23ffb18b81aa66aa34";
+function Start() {
+		var deviceID = "";
+		var accessToken = "";
 		
 		// Subscribe to event listener
 		var eventSource = new EventSource("https://api.spark.io/v1/devices/" + deviceID + "/events/?access_token=" + accessToken);
@@ -34,12 +39,18 @@ function start() {
 			SetBathroomStatus(parsedData.data);
 			}, false);
 		
-		SetInitialStatus();		
+		SetInitialStatus();
+		
 			
 }
 
 $(document).ready(function() {
-	start();
+	Start();
 });
 
+var destroyed = function(){
+	$(".destroyed").slideDown(1000, function(){
+		$(".destroyed").slideUp(1000)
+	});
+};
 

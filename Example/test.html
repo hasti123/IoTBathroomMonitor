@@ -38,7 +38,7 @@
           top: 0;
           right: 0;
           left: 0;
-          height: 460px;
+          height: 800px;
           color: #FFF;
           font-size: 50px;
           font-family: sans-serif;
@@ -81,6 +81,10 @@
         </g>
       </svg>
     </div>
+    
+    <div class="destroyed">
+      Bathroom DESTROYED.
+    </div>
 
     <br>
     <input type="submit" value="Make Bathroom 1 Taken" class="button bath1Taken">
@@ -120,6 +124,12 @@
     <input type="submit" value="Make Bathroom 12 Available" class="button bath12Available">
 
     <script>
+      
+      var destroyed = function(){
+        $(".destroyed").slideDown(2000, function(){
+          $(".destroyed").slideUp(2000)
+        });
+      };
 
     $('.button').click(function(){
 
@@ -186,6 +196,7 @@
         $('#bathEleven').attr('class', "space active");
       } else if ($(this).hasClass('bath11Available')) {
         $('#bathEleven').attr('class', "space");
+        destroyed();
       }
 
       else if ($(this).hasClass('bath12Taken')) {

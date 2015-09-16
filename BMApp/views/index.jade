@@ -8,13 +8,15 @@ block HomeHeadContent
 
 block content
   p#greeting Welcome to the BM App!
-  br
   //p#uptime
   //br
   //img#IndicatorLight(src="/images/loading_spinner.gif")
   //br
   //p#IndicatorText
   
+  .destroyed
+    Bathroom Destroyed
+    
   .loading
     | Loading the assets....
   input.scaler(placeholder='Scale Percentage')
