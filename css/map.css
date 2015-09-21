@@ -1,0 +1,45 @@
+
+body {
+	margin: 0; padding: 0;
+}
+#mapSvg {
+	background-image: url('../images/floorplan.png');
+	height: 896px;
+	width: 1128px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.space {
+	fill: green;
+	opacity: .5;
+}
+.active {
+	-webkit-animation: activeSpace 6s infinite;
+}
+@-webkit-keyframes activeSpace {
+	0%    {fill: red;}
+	33%   {fill: brown;}
+	66%   {fill: orange;}
+	100%  {fill: red;}
+}
+.destroyed {
+	background-color: rgba(135, 104, 0, 0.9);
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 100%;
+	color: #FFF;
+	font-size: 50px;
+	font-family: sans-serif;
+	font-weight: bold;
+	padding: 20px;
+	display: none;
+	background-image: url('../images/destroyed.png');
+	background-size: cover;
+	background-position: right top;
+}
+.scaler {
+	margin: 10px;
+}
+

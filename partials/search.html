@@ -1,0 +1,54 @@
+<!-- Page Content -->
+
+<div class="container" ng-controller="SearchCtrl" ng-init="initializeSearchPage()">
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h1 class="page-header">Search
+                <small>Vehicle Search Engine</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Home</a>
+                </li>
+                <li class="active">Search</li>
+            </ol>
+            
+            </br>
+
+            <!-- Search Functionality -->
+              
+            <select class="searchTools" ng-disabled="disableManufacturers" ng-init="populateManufacturers()" ng-model="ManufacturerModel" ng-change="searchModels(ManufacturerModel)">
+              <option value="" disabled selected>Select Manufacturer</option>
+              <option ng-repeat='manufacturer in manufacturerList' value='{{manufacturer.Id}}' ng-bind='manufacturer.Name'></option>
+            </select>
+            
+            <select class="searchTools" ng-disabled="disableModels" ng-model="ModelModel" ng-change="showModels(ModelModel)">
+              <option value="" disabled selected>Select Model</option>
+              <option ng-repeat='model in modelList' value='{{model.Id}}' ng-bind='model.Name'></option>
+            </select>
+            
+            
+            <!--vehiclePreview></vehiclePreview-->
+            
+            <div class="vehicleList" ng-show="showVehicles">
+              <!--vehiclePreview ng-repeat='vehicle in vehicleList' info='{{vehicle}}'></vehiclePreview-->
+              
+              <div class="vehicleListing" ng-repeat='vehicle in vehicleList'> 
+                <img class="vehicleThumbnail"></img>
+                <span class="vehicleMainInfo" ng-bind="vehicle.Vehicle_Year"></span>
+                <span class="vehicleMainInfo" ng-bind="vehicle.Manufacturer_Name"></span>
+                <span class="vehicleMainInfo" ng-bind="vehicle.Model_Name"></span>
+              </div>
+              
+            </div>
+            
+            <br/><br/>
+            
+        </div>
+
+    </div>
+    <!-- /.row --> 
+
+</div>
+<!-- /.container -->

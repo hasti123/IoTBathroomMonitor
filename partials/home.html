@@ -1,0 +1,31 @@
+<div ng-controller="HomeCtrl" ng-init="start()">
+  <link rel="stylesheet" href="../css/map.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <p ng-bind='pageTitle'></p>
+
+  <div class="destroyed">
+    <Bathroom>Destroyed</Bathroom>
+  </div>
+  <!--div class="loading">Loading the assets....</div>
+  <input placeholder="Scale Percentage" class="scaler"/>
+  <input id="scalerButton" type="submit" value="Scale It"/-->
+  <div class="layout">
+    <svg id="mapSvg" class="buildingMap">
+      <g class="buildingMapGraphic">
+        <path id="bathOne" d="M245,192 278,192 278,227 245,227" class="space"></path>
+        <path id="bathTwo" d="M279,192 311,192 311,227 279,227" class="space"></path>
+        <path id="bathThree" d="M511,245 544,245 544,280 511,280" class="space"></path>
+        <path id="bathFour" d="M545,245 578,245 578,280 545,280" class="space"></path>
+        <path id="bathFive" d="M382,489 416,489 416,525 382,525" class="space"></path>
+        <path id="bathSix" d="M417,489 449,489 449,525 417,525" class="space"></path>
+        <path id="bathSeven" d="M718,502 754,502 754,535 718,535" class="space"></path>
+        <path id="bathEight" d="M718,536 754,536 754,569 718,569" class="space"></path>
+        <path id="bathNine" d="M337,647 300,647 300,685, 337,685" class="space"></path>
+        <path id="bathTen" d="M338,647 374,647 374,685 338,685" class="space"></path>
+        <path id="bathEleven" d="M522,685 559,685 559,740 522,740" class="{{bathElevenClass}}"></path>
+        <path id="bathTwelve" d="M560,685 596,685 596,740 560,740" class="space"></path>
+      </g>
+    </svg>
+  </div>
+</div>
